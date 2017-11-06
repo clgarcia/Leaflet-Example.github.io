@@ -12,22 +12,6 @@ L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 ////////////////////////////////////////////////////////////////////////////////
-// add geojson point file for colorado spills
-var geojsonMarkerOptions = {
-    radius: 8,
-    fillColor: "#FF0000",
-    color: "#000",
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 0.8
-};
-
-L.geoJSON(spills.geoJSON, {
-    pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng);
-    }
-}).addTo(map);
-////////////////////////////////////////////////////////////////////////////////
 // control that shows state info on hover
 var info = L.control();
 
