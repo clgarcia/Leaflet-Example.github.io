@@ -24,7 +24,7 @@ var geojsonMarkerOptions = {
 
 L.geoJSON(spills.geoJSON, {
     pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, geojsonMarkerOptions);
+        return L.circleMarker(latlng);
     }
 }).addTo(map);
 ////////////////////////////////////////////////////////////////////////////////
