@@ -30,29 +30,23 @@ info.update = function(props) {
 info.addTo(map);
 
 ////////////////////////////////////////////////////////////////////////////////
-// get color depending on population density value
-function getColor(d) {
-  return d > 1000 ? '#800026' :
-    d > 500 ? '#BD0026' :
-    d > 200 ? '#E31A1C' :
-    d > 100 ? '#FC4E2A' :
-    d > 50 ? '#FD8D3C' :
-    d > 20 ? '#FEB24C' :
-    d > 10 ? '#FED976' :
-    '#FFEDA0';
-}
-
-// set color of the json based on its Population Density
-function style(feature) {
-  return {
-    weight: 2,
+/// Display spills points
+var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
     opacity: 1,
-    color: 'white',
-    dashArray: '3',
-    fillOpacity: 0.7,
-    fillColor: getColor(feature.properties.density)
-  };
-}
+    fillOpacity: 0.8
+};
+
+L.geoJSON(spills, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions);
+    }
+}).addTo(map);
+
+
 // highlightFeature function
 function highlightFeature(e) {
   var layer = e.target;
