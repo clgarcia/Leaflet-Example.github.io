@@ -41,7 +41,7 @@ var geojsonMarkerOptions = {
 };
 
 L.geoJSON(spills, {
-    pointToLayer: function (feature, latlng) {
+    pointToLayer: function (spills, latlng) {
         return L.circleMarker(latlng, geojsonMarkerOptions);
     }
 }).addTo(map);
