@@ -3,6 +3,7 @@
 var coords = [39.113014, -105.358887]; // map center point
 var zoom = 7; // map zoom level lower number is out higher number is in
 var map = L.map('map').setView(coords, zoom); // put it all together
+var spills;
 
 ////////////////////////////////////////////////////////////////////////////////
 // load a basemap tile layer
