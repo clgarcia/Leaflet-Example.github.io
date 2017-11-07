@@ -32,7 +32,7 @@ info.addTo(map);
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Display spills points
-spills = L.geoJSON.ajax(./
+spills = L.geoJSON.ajax(../Public
 
 
 // highlightFeature function
