@@ -32,17 +32,6 @@ info.addTo(map);
 ////////////////////////////////////////////////////////////////////////////////
 // get color depending on population density value
 
-// set color of the json based on its Population Density
-function style(feature) {
-  return {
-    weight: 2,
-    opacity: 1,
-    color: 'white',
-    dashArray: '3',
-    fillOpacity: 0.7,
-    fillColor: getColor(feature.properties.density)
-  };
-}
 // highlightFeature function
 function highlightFeature(e) {
   var layer = e.target;
