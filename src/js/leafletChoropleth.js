@@ -31,7 +31,7 @@ info.addTo(map);
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Display spills points
-var geojsonMarkerOptions = {
+var spills = {
     radius: 8,
     fillColor: "#ff7800",
     color: "#000",
@@ -41,7 +41,7 @@ var geojsonMarkerOptions = {
 };
 
 L.geoJSON(spills, {
-    pointToLayer: function (spills, latlng) {
+    pointToLayer: function (features, latlng) {
         return L.circleMarker(latlng, geojsonMarkerOptions);
     }
 }).addTo(map);
